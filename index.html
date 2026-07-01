@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>עולם קטן · נועם ויעל מחכים לך בהירוקה בעופרים</title>
-<meta name="description" content="הכירו את נועם ויעל שגרים בהירוקה בעופרים. יש לנו כמה פרטים עליהם — בואו נגלה יחד מה החוליה שמחברת אתכם.">
+<meta name="description" content="הכירו את נועם ויעל שגרים בהירוקה בעופרים. כמה שאלות — ונגלה את החוליה שמחברת אתכם.">
 <meta property="og:title" content="עולם קטן! מצאנו איך אתה קשור לנועם ויעל 🌿">
-<meta property="og:description" content="שיחה קצרה, כמה שאלות, ומוצאים את החוליה המדויקת שמחברת אותך לזוג הכי חמוד בהירוקה בעופרים.">
+<meta property="og:description" content="כמה שאלות קטנות, ומוצאים את החוליה המדויקת שמחברת אותך לזוג הכי חמוד בהירוקה בעופרים.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,22 +34,19 @@ body{
 }
 .wrap{flex:1; width:100%; max-width:640px; margin:0 auto; padding:22px 20px 40px; display:flex; flex-direction:column}
 
-/* header brand */
 .brand{display:flex; align-items:center; gap:10px; justify-content:center; margin:6px 0 2px}
 .brand .dot{font-size:26px; filter:drop-shadow(0 3px 5px rgba(0,0,0,.15))}
 .brand b{font-weight:800; letter-spacing:.2px; color:var(--green-d)}
 .brand small{color:var(--ink-soft); font-weight:500}
 
-/* card */
 .card{
   background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow);
-  padding:26px 22px; margin-top:18px; position:relative; overflow:hidden;
+  padding:28px 24px; margin-top:18px; position:relative; overflow:hidden;
   border:1px solid rgba(47,125,52,.10);
 }
 .card::before{content:""; position:absolute; inset:0 0 auto 0; height:7px;
   background:linear-gradient(90deg,var(--green),var(--leaf),var(--gold)); z-index:2}
 
-/* screens */
 .screen{display:none; animation:pop .45s cubic-bezier(.2,.9,.3,1.2)}
 .screen.active{display:block}
 @keyframes pop{from{opacity:0; transform:translateY(14px) scale(.98)}to{opacity:1; transform:none}}
@@ -61,60 +58,44 @@ h1 .hl{background:linear-gradient(180deg,transparent 60%, #ffe08a 60%); padding:
 .kicker span{display:inline-block; background:var(--sand); color:var(--green-d); font-weight:700;
   font-size:13px; padding:6px 13px; border-radius:999px}
 
-/* couple illustration */
 .fam{width:100%; max-width:320px; margin:2px auto 12px; display:block; filter:drop-shadow(0 12px 22px rgba(31,90,36,.18))}
 .namecard{background:#f7fbf2; border:1.5px solid #e3efd7; border-radius:18px; padding:13px 16px; margin:2px 0; text-align:center}
 .namecard .nm{font-weight:900; color:var(--green-d); font-size:20px}
 .namecard .bio{color:var(--ink-soft); font-size:14.5px; line-height:1.55; margin-top:4px}
 
-/* chat */
-.matchhead{display:flex; align-items:center; gap:11px; padding:2px 2px 14px; margin-bottom:6px; border-bottom:1.5px dashed #e3efd7}
-.matchhead .av{flex:none; width:44px; height:44px; border-radius:50%; background:radial-gradient(circle at 50% 35%,#fff,#eef7e7);
-  border:2px solid var(--leaf); display:grid; place-items:center; font-size:22px}
-.matchhead .mh-t b{color:var(--green-d); font-weight:900; font-size:15.5px; display:block; line-height:1.2}
-.matchhead .mh-t span{color:var(--ink-soft); font-size:12.5px}
-.matchhead .badge{margin-inline-start:auto; background:var(--sand); color:var(--green-d); font-weight:700; font-size:11.5px; padding:5px 10px; border-radius:999px}
+/* progress */
+.prog{height:9px; background:var(--sand); border-radius:999px; overflow:hidden; margin-bottom:6px}
+.prog>i{display:block; height:100%; width:0; border-radius:999px;
+  background:linear-gradient(90deg,var(--green),var(--leaf)); transition:width .5s cubic-bezier(.3,1,.3,1)}
+.qcount{font-size:13px; color:var(--ink-soft); font-weight:600; margin-bottom:14px; text-align:left}
 
-.chat{display:flex; flex-direction:column; gap:11px; min-height:220px; padding:6px 0}
-.msg{display:flex}
-.msg.bot{justify-content:flex-start}
-.msg.me{justify-content:flex-end}
-.bubble{max-width:84%; padding:12px 15px; border-radius:18px; line-height:1.5; font-size:15.5px;
-  animation:bub .32s cubic-bezier(.2,.9,.3,1.2)}
-@keyframes bub{from{opacity:0; transform:translateY(8px) scale(.97)}to{opacity:1; transform:none}}
-.msg.bot .bubble{background:#f7fbf2; border:1.5px solid #e3efd7; color:var(--ink); border-top-right-radius:6px}
-.msg.bot .bubble b{color:var(--green-d)}
-.msg.me .bubble{background:linear-gradient(180deg,var(--green-l),var(--green)); color:#fff; border-top-left-radius:6px; font-weight:600;
-  box-shadow:0 6px 14px rgba(47,125,52,.28)}
-.bubble.typing{display:flex; gap:5px; padding:15px}
-.bubble.typing span{width:8px; height:8px; border-radius:50%; background:var(--green-l); opacity:.5; animation:blink 1s infinite}
-.bubble.typing span:nth-child(2){animation-delay:.2s} .bubble.typing span:nth-child(3){animation-delay:.4s}
-@keyframes blink{0%,60%,100%{opacity:.3; transform:translateY(0)}30%{opacity:1; transform:translateY(-4px)}}
+/* rolling question box */
+.qbox{animation:roll .42s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes roll{from{opacity:0; transform:translateX(26px)}to{opacity:1; transform:none}}
+.lead2{font-size:15px; color:var(--green-l); font-weight:700; margin-bottom:6px; min-height:20px}
+.q{font-size:23px; font-weight:900; color:var(--ink); line-height:1.3; margin-bottom:18px}
+.q b{color:var(--green-d)}
 
-/* reveal bubble */
-.bubble.reveal{max-width:100%; width:100%; background:linear-gradient(180deg,#fff,#f3faec);
-  border:2px solid var(--leaf); border-radius:20px; text-align:center; padding:20px 18px}
-.reveal .rvhead{font-size:14px; font-weight:800; color:var(--gold); letter-spacing:.3px; margin-bottom:8px}
-.reveal .deg{width:118px; height:118px; margin:2px auto 12px; border-radius:50%;
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  background:radial-gradient(circle at 50% 40%,#fff,#eef7e7); border:4px solid var(--leaf); box-shadow:inset 0 0 0 6px #fff}
-.reveal .deg b{font-size:44px; font-weight:900; color:var(--green); line-height:1}
-.reveal .deg span{font-size:11.5px; font-weight:700; color:var(--ink-soft); margin-top:1px}
-.reveal .rvline{font-size:19px; font-weight:900; color:var(--green-d); line-height:1.3; margin:2px 8px 10px}
-.reveal .rvverdict{font-size:15px; color:#6b5411; line-height:1.55; background:linear-gradient(180deg,#fff8e5,#fff2cf);
-  border:1.5px solid #f0d98a; border-radius:14px; padding:12px 14px; margin-top:6px}
-.reveal .rvverdict b{color:#8a6a0d}
+/* gender picks */
+.picks{display:flex; gap:12px}
+.pick{flex:1; background:#f2f7ec; border:2px solid #d8e6cc; color:var(--green-d); font-family:inherit;
+  font-size:17px; font-weight:800; padding:22px 10px; border-radius:18px; cursor:pointer; transition:.15s; text-align:center}
+.pick:hover{background:var(--leaf); color:#fff; border-color:var(--leaf); transform:translateY(-2px)}
+.pick .pe{display:block; font-size:32px; margin-bottom:6px}
 
-/* controls */
-.controls{margin-top:16px; display:flex; flex-direction:column; gap:10px}
+/* closed options */
+.optcol{display:flex; flex-direction:column; gap:10px}
 .opt{width:100%; font-family:inherit; font-size:16.5px; font-weight:800; cursor:pointer;
-  padding:15px 16px; border-radius:16px; text-align:center; transition:.15s;
+  padding:16px; border-radius:16px; text-align:center; transition:.15s;
   background:#f2f7ec; border:2px solid #d8e6cc; color:var(--green-d)}
 .opt:hover{background:var(--leaf); color:#fff; border-color:var(--leaf); transform:translateY(-2px)}
 .opt.yes{background:linear-gradient(180deg,var(--green-l),var(--green)); color:#fff; border:none; box-shadow:0 8px 20px rgba(47,125,52,.3)}
 .opt.no{background:#fff; color:var(--ink-soft); border-color:#e3ddc8}
 .opt.no:hover{background:#f2f7ec; color:var(--green-d)}
+.opt.single{background:transparent; border:none; color:var(--ink-soft); font-weight:600; font-size:14.5px; text-decoration:underline; padding:8px; box-shadow:none}
+.opt.single:hover{color:var(--green-d); transform:none; background:transparent}
 
+/* open follow-up */
 .openbox{display:flex; flex-direction:column; gap:10px}
 input[type=text]{
   width:100%; font-family:inherit; font-size:17px; padding:14px 16px; border-radius:16px;
@@ -130,23 +111,45 @@ input::placeholder{color:#b3ab92}
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
   width:100%; font-family:inherit; font-size:18px; font-weight:800; cursor:pointer;
-  padding:16px 20px; border:none; border-radius:16px; color:#fff;
+  padding:16px 20px; border:none; border-radius:16px; color:#fff; margin-top:6px;
   background:linear-gradient(180deg,var(--green-l),var(--green));
   box-shadow:0 10px 24px rgba(47,125,52,.35); transition:.18s;
 }
 .btn:hover{transform:translateY(-2px); box-shadow:0 14px 30px rgba(47,125,52,.45)}
 .btn:active{transform:translateY(0)}
-.btn.ghost{background:#fff; color:var(--green-d); border:2px solid #d8e6cc; box-shadow:none}
+.btn.ghost{background:#fff; color:var(--green-d); border:2px solid #d8e6cc; box-shadow:none; margin-top:12px}
 .btn.ghost:hover{background:#f2f7ec}
+
+/* loading */
+.loader{text-align:center; padding:26px 0}
+.spin{width:74px; height:74px; margin:0 auto 22px; border-radius:50%;
+  border:7px solid var(--sand); border-top-color:var(--green); animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.loadmsg{font-size:19px; font-weight:700; color:var(--green-d); min-height:26px}
+
+/* result */
+.big{font-size:clamp(28px,8vw,42px); font-weight:900; color:var(--green-d); line-height:1.08; text-align:center; margin-bottom:4px}
+.sub{text-align:center; color:var(--ink-soft); font-size:16px; margin-bottom:18px}
+.degree{
+  text-align:center; margin:8px auto 16px; width:170px; height:170px; border-radius:50%;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  background:radial-gradient(circle at 50% 40%, #fff, #eef7e7);
+  border:4px solid var(--leaf); box-shadow:inset 0 0 0 8px #fff, var(--shadow);
+}
+.degree b{font-size:56px; font-weight:900; color:var(--green); line-height:1}
+.degree span{font-size:13px; font-weight:700; color:var(--ink-soft); margin-top:2px; padding:0 14px}
+.revline{text-align:center; font-size:20px; font-weight:900; color:var(--green-d); line-height:1.3; margin:2px 6px 12px}
+.verdict{background:linear-gradient(180deg,#fff8e5,#fff2cf); border:1.5px solid #f0d98a;
+  border-radius:18px; padding:16px 18px; margin:0 0 6px; text-align:center; font-size:15.5px; line-height:1.6; color:#6b5411}
+.verdict b{color:#8a6a0d}
 
 footer{margin-top:26px; text-align:center; color:var(--ink-soft); font-size:13px; line-height:1.7; padding:0 8px}
 footer a{color:var(--green-d); font-weight:600}
 .disc{font-size:12px; color:#9a9481; margin-top:10px}
 
-/* confetti */
 #cf{position:fixed; inset:0; pointer-events:none; z-index:50}
 
-@media(max-width:420px){ .card{padding:22px 16px} .bubble{max-width:88%} }
+@media(max-width:420px){ .card{padding:24px 18px} .degree{width:150px;height:150px} .degree b{font-size:46px} .picks{gap:9px} }
 </style>
 </head>
 <body>
@@ -158,7 +161,6 @@ footer a{color:var(--green-d); font-weight:600}
     <!-- INTRO -->
     <section class="screen active" id="s-intro">
       <div class="kicker"><span>👋 זוג השבוע · תכירו את השכנים</span></div>
-      <!-- couple illustration -->
       <svg class="fam" viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg" aria-label="נועם ויעל וילדיהם">
         <rect x="0" y="196" width="360" height="44" fill="#dcecc9"/>
         <rect x="16" y="120" width="120" height="80" rx="6" fill="#f0e6cf"/>
@@ -170,7 +172,6 @@ footer a{color:var(--green-d); font-weight:600}
         <circle cx="321" cy="140" r="26" fill="#57a85c"/>
         <circle cx="304" cy="150" r="18" fill="#8bc34a"/>
         <circle cx="338" cy="150" r="18" fill="#8bc34a"/>
-        <!-- WOMAN -->
         <g transform="translate(232,96)">
           <path d="M-4 -22 q22 -18 44 0 q6 20 -4 34 q-18 8 -36 0 q-10 -14 -4 -34 Z" fill="#6b4b2f"/>
           <path d="M-6 -14 q24 -16 52 0 q2 -22 -26 -24 q-28 2 -26 24 Z" fill="#c98a55"/>
@@ -179,7 +180,6 @@ footer a{color:var(--green-d); font-weight:600}
           <circle cx="14" cy="2" r="2.2" fill="#3a2a1a"/><circle cx="27" cy="2" r="2.2" fill="#3a2a1a"/>
           <path d="M14 12 q6 4 12 0" stroke="#b06a45" stroke-width="2" fill="none" stroke-linecap="round"/>
         </g>
-        <!-- MAN -->
         <g transform="translate(150,92)">
           <ellipse cx="20" cy="-16" rx="16" ry="8" fill="#3a5fa0"/>
           <circle cx="20" cy="6" r="20" fill="#f2c79a"/>
@@ -188,7 +188,6 @@ footer a{color:var(--green-d); font-weight:600}
           <path d="M13 15 q7 5 14 0" stroke="#b06a45" stroke-width="2" fill="none" stroke-linecap="round"/>
           <path d="M6 12 q14 8 28 0" stroke="#7a5a3a" stroke-width="3" fill="none" stroke-linecap="round"/>
         </g>
-        <!-- KIDS -->
         <g transform="translate(196,150)">
           <circle cx="12" cy="4" r="13" fill="#f2c79a"/>
           <path d="M0 18 h24 q3 26 -3 30 q-9 4 -18 0 q-5 -3 -3 -30 Z" fill="#e0a92e"/>
@@ -207,19 +206,43 @@ footer a{color:var(--green-d); font-weight:600}
         <div class="bio" id="introBio"></div>
       </div>
       <h1>יש לנו כמה פרטים עליהם.<br><span class="hl">בוא נגלה איך אתה קשור</span></h1>
-      <p class="lead">אצל דתיים אין באמת זרים — תמיד יש חוליה אחת שמחברת. שב, ננהל שיחה קצרה, וכמעט בטוח שנמצא אותה.</p>
-      <button class="btn" onclick="startChat()">יאללה, בוא נמצא את החוליה 🔍</button>
+      <p class="lead">אצל דתיים אין באמת זרים — תמיד יש חוליה אחת שמחברת. כמה שאלות, וכמעט בטוח שנמצא אותה.</p>
+      <button class="btn" onclick="startQuiz()">יאללה, בוא נמצא את החוליה 🔍</button>
     </section>
 
-    <!-- CHAT -->
-    <section class="screen" id="s-chat">
-      <div class="matchhead">
-        <div class="av">🌿</div>
-        <div class="mh-t"><b id="mhNames">נועם ויעל</b><span id="mhSub"></span></div>
-        <div class="badge">מחפשים חוליה…</div>
+    <!-- QUESTIONS (rolling) -->
+    <section class="screen" id="s-q">
+      <div class="prog"><i id="bar"></i></div>
+      <div class="qcount" id="qcount"></div>
+      <div class="qbox" id="qbox">
+        <div class="lead2" id="qlead"></div>
+        <div class="q" id="qtext"></div>
+        <div id="qopts"></div>
+        <div class="openbox" id="qopen" style="display:none">
+          <input type="text" id="qinput" autocomplete="off" enterkeyhint="next">
+          <div class="chips" id="qchips"></div>
+          <button class="btn" id="qsend">שלח ←</button>
+        </div>
       </div>
-      <div class="chat" id="chat"></div>
-      <div class="controls" id="controls"></div>
+    </section>
+
+    <!-- LOADING -->
+    <section class="screen" id="s-load">
+      <div class="loader">
+        <div class="spin"></div>
+        <div class="loadmsg" id="loadmsg">בודק את התיק של נועם ויעל…</div>
+      </div>
+    </section>
+
+    <!-- RESULT -->
+    <section class="screen" id="s-res">
+      <div class="big" id="bigline">עולם קטן! 🤯</div>
+      <div class="sub" id="subline"></div>
+      <div class="degree"><b id="degNum">1</b><span>מעלות הפרדה בינך לנועם ויעל</span></div>
+      <div class="revline" id="revline"></div>
+      <div class="verdict" id="verdict"></div>
+      <button class="btn" onclick="share()">🔗 תשתף את החיבור</button>
+      <button class="btn ghost" onclick="location.reload()">↺ מההתחלה</button>
     </section>
   </div>
 
@@ -232,76 +255,66 @@ footer a{color:var(--green-d); font-weight:600}
 
 <script>
 /* =========================================================================
-   זוג השבוע — להחלפה שבועית: פשוט ערכו את האובייקט COUPLE הזה.
-   לכל "כיוון" (avenue) יש: פרט אמיתי ידוע על הזוג ← שאלה סגורה (כן/לא).
-   'כן' = מצאנו חיבור ישיר משם.  'לא' = נשאל שאלה פתוחה ונעבור לכיוון הבא.
+   זוג השבוע — להחלפה שבועית: ערכו רק את האובייקט COUPLE.
+   שדות עם {m, f} מתאימים את עצמם למין שנבחר בשאלה הראשונה (m=גבר, f=אשה).
+   כל כיוון: probe = שאלה סגורה וחשופה (בלי לרמז למה). 'כן' = חושפים קישור
+   מפתיע דרך צד שלישי. 'לא' = נשאלת שאלה פתוחה, וממשיכים לכיוון הבא בלי לגלות.
+   spouseFor: המין שעבורו הכיוון מדבר על בן/בת הזוג (מוסיף אופציית "עוד לא נשוי/אה").
    ========================================================================= */
 const COUPLE = {
   names: 'נועם ויעל',
   bio: '+ עלמה (5) ואיתי (2). עברו להירוקה בעופרים לפני שנתיים. נועם מהנדס תוכנה, יעל מורה למתמטיקה, והכלב קוראים לו רמב״ם 🐕',
-  sub: 'עברו לעופרים לפני שנתיים',
-  opener: 'היי! 👋 אני המשדך הרשמי של הירוקה בעופרים. יש לי תיק שלם של פרטים על <b>נועם ויעל</b> — אבל אני לא מגלה לך אותם. אני שואל, אתה עונה, ורק אם קלענו — אני אראה לך את החוליה. מבטיח שתופתע. יאללה.',
   avenues: [
     {
-      id: 'yeshiva',
-      icon: '📖',
-      probe: 'קודם כל אתה. <b>למדת בישיבת מרכז הרב?</b>',
-      options: [
-        { label: 'כן, למדתי שם 📖', hit: true },
-        { label: 'לא', hit: false }
-      ],
-      hit: 'רגע… 🤯 אז אתה בטוח מכיר את יענקל׳ה מהמכולת שממול השער — זה שמקיף לכל הבחורים עד אחרי החגים. <b>יענקל׳ה הוא הדוד של נועם.</b> ולא רק — הוא זה שהציע את השידוך בין נועם ליעל. בלעדיו הם לא היו קיימים.',
+      id: 'yeshiva', spouseFor: 'f',
+      lead: { m: 'יופי. נתחיל ממך.', f: 'יופי. נתחיל מבעלך.' },
+      probe: { m: 'למדת בישיבת <b>מרכז הרב</b>?', f: 'בעלך למד בישיבת <b>מרכז הרב</b>?' },
+      yes: { m: 'כן, למדתי שם 📖', f: 'כן, הוא למד שם 📖' },
+      hit: {
+        m: 'רגע… 🤯 אז אתה בטוח מכיר את יענקל׳ה מהמכולת שממול השער, זה שמקיף לכל הבחורים עד אחרי החגים. <b>יענקל׳ה הוא הדוד של נועם</b> — והוא זה שהציע את השידוך בין נועם ליעל. בלעדיו הם לא היו קיימים.',
+        f: 'רגע… 🤯 אז בעלך בטוח מכיר את יענקל׳ה מהמכולת שממול השער, זה שמקיף לכל הבחורים עד אחרי החגים. <b>יענקל׳ה הוא הדוד של נועם</b> — והוא זה שהציע את השידוך בין נועם ליעל. בלעדיו הם לא היו קיימים.'
+      },
       revealLine: 'יענקל׳ה מהמכולת מול מרכז הרב הוא הדוד של נועם — והשדכן שלהם 🛒',
-      openQ: 'אין בעיה. אז איפה כן למדת אחרי התיכון? (ישיבה / מכינה / ישר לצבא)',
+      openQ: { m: 'אין בעיה. אז איפה כן למדת אחרי התיכון?', f: 'אין בעיה. אז איפה בעלך למד אחרי התיכון?' },
       openChips: ['הר עציון', 'ישיבת שדרות', 'מכינת עלי', 'כרם ביבנה', 'ישר לצבא'],
-      openReact: a => 'הבנתי, ' + a + '. סימנתי לי. בוא ננסה כיוון אחר.',
+      singleReact: 'אה, עדיין לא נשואה? סבבה, גם יעל חיכתה בסבלנות. נלך דרך אחר.',
       weave: a => 'הדוד של נועם מכיר את הרב מ' + a
     },
     {
-      id: 'sherut',
-      icon: '🎗️',
-      probe: 'עכשיו לגבי אשתך. <b>היא עשתה שירות לאומי בבית חולים שערי צדק?</b>',
-      options: [
-        { label: 'כן, בשערי צדק 🎗️', hit: true },
-        { label: 'לא', hit: false },
-        { label: 'אני עוד לא נשוי/אה', hit: false, skipOpen: true,
-          react: 'אה, רווק/ה! גם נועם היה, אל תדאג. אז נלך דרך משהו אחר.' }
-      ],
-      hit: 'לא ייאמן 🤯 אז היא בטוח מכירה את חדווה, האחות הראשית במחלקת ילדים — זו שכולן פחדו ממנה בהתחלה ואהבו בסוף. <b>חדווה היא הגיסה של יעל.</b> כל בנות השירות עברו דרכה, כולל אשתך.',
+      id: 'sherut', spouseFor: 'm',
+      lead: { m: 'אוקיי, עזוב את הישיבה רגע — עכשיו לגבי אשתך.', f: 'אוקיי, עכשיו נעבור אלייך.' },
+      probe: { m: 'אשתך עשתה שירות לאומי ב<b>שערי צדק</b>?', f: 'עשית שירות לאומי בבית חולים <b>שערי צדק</b>?' },
+      yes: { m: 'כן, בשערי צדק 🎗️', f: 'כן, בשערי צדק 🎗️' },
+      hit: {
+        m: 'לא ייאמן 🤯 אז היא בטוח מכירה את חדווה, האחות הראשית במחלקת ילדים — זו שכולן פחדו ממנה בהתחלה ואהבו בסוף. <b>חדווה היא הגיסה של יעל.</b> כל בנות השירות עברו דרכה, כולל אשתך.',
+        f: 'לא ייאמן 🤯 אז את בטוח מכירה את חדווה, האחות הראשית במחלקת ילדים — זו שכולן פחדו ממנה בהתחלה ואהבו בסוף. <b>חדווה היא הגיסה של יעל.</b> כל בנות השירות עברו דרכה, כולל אותך.'
+      },
       revealLine: 'חדווה, האחות הראשית בשערי צדק, היא הגיסה של יעל 🎗️',
-      openQ: 'סבבה. אז איפה כן עשתה/עשית שירות לאומי או צבא?',
+      openQ: { m: 'סבבה. אז איפה אשתך עשתה שירות לאומי או צבא?', f: 'סבבה. אז איפה את עשית שירות לאומי או צבא?' },
       openChips: ['פנימיית נוער', 'אולפנה', 'חינוך מיוחד', 'בית חולים אחר', 'צבא'],
-      openReact: a => 'אוקיי, ' + a + '. רשמתי. ממשיכים.',
+      singleReact: 'אה, עדיין לא נשוי? גם נועם היה רווק פעם. נלך דרך משהו אחר.',
       weave: a => 'הגיסה של יעל עבדה פעם ב' + a
     },
     {
-      id: 'family',
-      icon: '🏘️',
-      probe: '<b>יש לך קרוב משפחה ביישוב עלי?</b>',
-      options: [
-        { label: 'כן, יש לי בעלי 🏘️', hit: true },
-        { label: 'לא', hit: false }
-      ],
-      hit: 'יאללה, תפסנו 🤯 הקרוב שלך בעלי — הוא גר בשכונה הצפונית, נכון? <b>השכן שממול הוא הסבא של יעל.</b> הם מדליקים אחד לשני את דוד השמש לפני שבת ושומרים חבילות. אתה בעצם כבר בן בית.',
+      id: 'family', spouseFor: null,
+      lead: 'עכשיו משפחה. פה זה תמיד מפתיע.',
+      probe: 'יש לך קרוב משפחה ביישוב <b>עלי</b>?',
+      yes: 'כן, יש לי בעלי 🏘️',
+      hit: 'יאללה, תפסנו 🤯 הקרוב שלך בעלי גר בשכונה הצפונית, נכון? <b>השכן שממול הוא הסבא של יעל.</b> הם מדליקים אחד לשני את דוד השמש לפני שבת ושומרים חבילות. אתם בעצם כבר משפחה.',
       revealLine: 'הקרוב שלך בעלי הוא שכן־ממול של הסבא של יעל 🏘️',
       openQ: 'אין דבר. אז איפה כן יש לך משפחה? (יישוב / עיר)',
       openChips: ['אלון מורה', 'שילה', 'טלמון', 'עפרה', 'גוש עציון', 'עיר גדולה'],
-      openReact: a => 'הבנתי, ' + a + '. שווה בדיקה בהמשך. הלאה.',
       weave: a => 'הסבא של יעל מכיר משפחה מ' + a
     },
     {
-      id: 'bnei',
-      icon: '🧡',
-      probe: 'ניסיון אחרון. <b>היית בבני עקיבא בשבט נצח בפתח תקווה?</b>',
-      options: [
-        { label: 'כן, שבט נצח! 🧡', hit: true },
-        { label: 'לא', hit: false }
-      ],
-      hit: 'זהו, נעילת תיק 🧡 המדריך שלך מנצח, זה עם הגיטרה שכולם עוד מדברים על השבת שלו — <b>הוא היום הרב של השכונה של נועם ויעל בעופרים, והוא זה שחיתן אותם.</b> תשלח לו ד״ש, הוא זוכר אותך בשם.',
+      id: 'bnei', spouseFor: null,
+      lead: 'טוב, ניסיון אחרון — וזה החזק שלי.',
+      probe: 'היית בבני עקיבא ב<b>שבט נצח</b> בפתח תקווה?',
+      yes: 'כן, שבט נצח! 🧡',
+      hit: 'זהו, נעילת תיק 🧡 המדריך שלך מנצח, זה עם הגיטרה שכולם עוד מדברים על השבת שארגן — <b>הוא היום הרב של השכונה של נועם ויעל בעופרים, והוא זה שחיתן אותם.</b> תשלח לו ד״ש, הוא זוכר אותך בשם.',
       revealLine: 'המדריך שלך מנצח הוא הרב שחיתן את נועם ויעל 🧡',
       openQ: 'סבבה, אחרון. באיזה שבט / סניף בני עקיבא היית?',
       openChips: ['מבוא', 'לפיד', 'מגל', 'אורים', 'לא הייתי בבנ״ע'],
-      openReact: a => 'טוב לדעת, ' + a + '. אוקיי, בוא נראה מה יש לנו.',
       weave: a => 'המדריך של נועם הדריך פעם ב' + a
     }
   ]
@@ -310,141 +323,148 @@ const COUPLE = {
 /* ---------- setup ---------- */
 document.getElementById('introBio').innerHTML = COUPLE.bio;
 document.getElementById('introNames').innerHTML = COUPLE.names + ' 🏡';
-document.getElementById('mhNames').textContent = COUPLE.names;
-document.getElementById('mhSub').textContent = COUPLE.sub;
+const AVN = COUPLE.avenues;
+const TOTAL = AVN.length + 1; // +1 for gender
 
-const chatEl = document.getElementById('chat');
-const controls = document.getElementById('controls');
-let ai = 0;              // avenue index
-const opens = {};        // stored open answers per avenue id
-let anyWeave = false;
+let gender = 'm';
+let ai = 0;
+let phase = 'probe';
+let carry = '';           // connective lead-in carried from previous answer
+const opens = {};
+let foundHit = null;      // reveal payload
 
+function g(v){ return (v && typeof v === 'object' && !Array.isArray(v)) ? v[gender] : v; }
 function show(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
-function scrollDown(){ requestAnimationFrame(()=>window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})); }
+function rollIn(){ const b=document.getElementById('qbox'); b.style.animation='none'; void b.offsetWidth; b.style.animation=''; }
+function setProg(f){ document.getElementById('bar').style.width=(f*100)+'%'; }
 
-function botSay(html, cb){
-  const w=document.createElement('div'); w.className='msg bot';
-  const b=document.createElement('div'); b.className='bubble typing';
-  b.innerHTML='<span></span><span></span><span></span>';
-  w.appendChild(b); chatEl.appendChild(w); scrollDown();
-  setTimeout(()=>{
-    b.classList.remove('typing'); b.innerHTML=html; scrollDown();
-    if(cb) setTimeout(cb, 320);
-  }, 620 + Math.random()*380);
-}
-function userSay(text){
-  const w=document.createElement('div'); w.className='msg me';
-  w.innerHTML='<div class="bubble">'+text+'</div>';
-  chatEl.appendChild(w); scrollDown();
-}
-function clearControls(){ controls.innerHTML=''; }
-function optBtn(label, cls){
-  const b=document.createElement('button'); b.className='opt'+(cls?' '+cls:''); b.textContent=label; return b;
-}
+const $opts=document.getElementById('qopts');
+const $open=document.getElementById('qopen');
+const $input=document.getElementById('qinput');
+const $chips=document.getElementById('qchips');
 
 /* ---------- flow ---------- */
-function startChat(){
-  show('s-chat'); chatEl.innerHTML=''; clearControls();
-  ai=0; anyWeave=false;
-  botSay(COUPLE.opener, ()=>askAvenue());
-}
+function startQuiz(){ show('s-q'); renderGender(); }
 
-function askAvenue(){
-  const av = COUPLE.avenues[ai];
-  botSay(av.probe, ()=>renderProbe(av));
-}
-
-function renderProbe(av){
-  clearControls();
-  av.options.forEach((o,idx)=>{
-    const cls = o.hit ? 'yes' : (idx===1?'no':'');
-    const b = optBtn(o.label, cls);
-    b.onclick = ()=>{
-      clearControls();
-      userSay(o.label);
-      if(o.hit){ botSay(av.hit, ()=>reveal('direct', av)); }
-      else if(o.skipOpen){ botSay(o.react || 'נמשיך.', ()=>nextAvenue()); }
-      else { botSay(av.openQ, ()=>renderOpen(av)); }
-    };
-    controls.appendChild(b);
+function renderGender(){
+  setProg(0);
+  document.getElementById('qcount').textContent = 'שאלה 1 מתוך ' + TOTAL;
+  document.getElementById('qlead').textContent = '';
+  document.getElementById('qtext').innerHTML = 'רגע לפני הכל — <b>אתה או את?</b>';
+  $open.style.display='none';
+  $opts.className='picks'; $opts.innerHTML='';
+  [{v:'m',t:'גבר',e:'🧢'},{v:'f',t:'אשה',e:'🧕'}].forEach(o=>{
+    const b=document.createElement('button'); b.className='pick';
+    b.innerHTML='<span class="pe">'+o.e+'</span>'+o.t;
+    b.onclick=()=>{ gender=o.v; ai=0; phase='probe'; carry=''; renderAvenue(); };
+    $opts.appendChild(b);
   });
+  rollIn();
 }
 
-function renderOpen(av){
-  clearControls();
-  const box=document.createElement('div'); box.className='openbox';
-  const inp=document.createElement('input'); inp.type='text'; inp.placeholder='כתוב כאן…'; inp.autocomplete='off';
-  const chips=document.createElement('div'); chips.className='chips';
-  const send=document.createElement('button'); send.className='btn'; send.textContent='שלח ←';
-  const submit=()=>{
-    const v=(inp.value.trim())||'מקום מסתורי';
-    opens[av.id]=v; anyWeave=true;
-    clearControls(); userSay(v);
-    botSay(av.openReact(v), ()=>nextAvenue());
-  };
-  av.openChips.forEach(c=>{
-    const ch=document.createElement('button'); ch.className='chip'; ch.textContent=c;
-    ch.onclick=()=>{ inp.value=c; inp.focus(); };
-    chips.appendChild(ch);
-  });
-  inp.addEventListener('keydown',e=>{ if(e.key==='Enter') submit(); });
-  send.onclick=submit;
-  box.appendChild(inp); box.appendChild(chips); box.appendChild(send);
-  controls.appendChild(box);
-  inp.focus();
+function renderAvenue(){
+  const av = AVN[ai];
+  setProg((ai+1)/TOTAL);
+  document.getElementById('qcount').textContent = 'שאלה ' + (ai+2) + ' מתוך ' + TOTAL;
+  document.getElementById('qlead').textContent = (carry ? carry + ' ' : '') + (phase==='probe' ? g(av.lead) : '');
+
+  if(phase==='probe'){
+    document.getElementById('qtext').innerHTML = g(av.probe);
+    $open.style.display='none';
+    $opts.className='optcol'; $opts.innerHTML='';
+    // YES
+    const yes=document.createElement('button'); yes.className='opt yes'; yes.textContent=g(av.yes);
+    yes.onclick=()=>{ foundHit={mode:'direct', av}; goLoad(); };
+    $opts.appendChild(yes);
+    // NO
+    const no=document.createElement('button'); no.className='opt no'; no.textContent='לא';
+    no.onclick=()=>{ phase='open'; carry=''; renderAvenue(); };
+    $opts.appendChild(no);
+    // single (not married) — only for the gender this avenue is spouse-based
+    if(av.spouseFor && gender===av.spouseFor){
+      const s=document.createElement('button'); s.className='opt single';
+      s.textContent = gender==='m' ? 'אני עוד לא נשוי' : 'אני עוד לא נשואה';
+      s.onclick=()=>{ carry=av.singleReact; nextAvenue(); };
+      $opts.appendChild(s);
+    }
+  } else {
+    // open follow-up
+    document.getElementById('qtext').innerHTML = g(av.openQ);
+    $opts.className=''; $opts.innerHTML='';
+    $open.style.display='flex';
+    $input.value=''; $input.placeholder='כתוב כאן…';
+    $chips.innerHTML='';
+    av.openChips.forEach(c=>{
+      const ch=document.createElement('button'); ch.className='chip'; ch.textContent=c;
+      ch.onclick=()=>{ $input.value=c; $input.focus(); };
+      $chips.appendChild(ch);
+    });
+    setTimeout(()=>$input.focus(),80);
+  }
+  rollIn();
 }
+
+function submitOpen(){
+  const v = $input.value.trim() || 'מקום מסתורי';
+  opens[AVN[ai].id] = v;
+  carry = '"' + v + '", רשמתי.';
+  nextAvenue();
+}
+document.getElementById('qsend').onclick = submitOpen;
+$input.addEventListener('keydown', e=>{ if(e.key==='Enter') submitOpen(); });
 
 function nextAvenue(){
-  ai++;
-  if(ai < COUPLE.avenues.length) askAvenue();
-  else reveal('fallback', null);
+  ai++; phase='probe';
+  if(ai < AVN.length) renderAvenue();
+  else { foundHit={mode:'fallback'}; goLoad(); }
 }
 
-/* ---------- reveal ---------- */
-function reveal(mode, av){
-  clearControls();
-  document.querySelector('.matchhead .badge').textContent = 'נמצאה חוליה ✓';
-  let deg, line, verdict;
+/* ---------- loading → reveal ---------- */
+const LOADS = ['בודק את התיק של נועם ויעל…','מצליב פרטים…','מאתר את החוליה המדויקת…'];
+function goLoad(){
+  show('s-load');
+  let i=0; const el=document.getElementById('loadmsg'); el.textContent=LOADS[0];
+  const iv=setInterval(()=>{ i++; if(i<LOADS.length) el.textContent=LOADS[i]; }, 640);
+  setTimeout(()=>{ clearInterval(iv); reveal(); }, LOADS.length*640+200);
+}
 
-  if(mode==='direct'){
-    deg='1'; line=av.revealLine;
-    verdict='חיבור <b>ישיר</b>, בלי אפילו מכר באמצע. אתה בעצם כבר מהמשפחה. יאללה — בוא לגור ב<b>הירוקה בעופרים</b> 🌿';
+function reveal(){
+  let deg, big, sub, line, verdict;
+  if(foundHit.mode==='direct'){
+    const av=foundHit.av;
+    deg='1'; big='מצאנו! 🎯'; sub='חיבור ישיר, בלי אפילו מכר באמצע.';
+    line=av.revealLine;
+    verdict = g(av.hit) + '<br><br>אז מה, אתם בעצם כבר משפחה. יאללה — בוא לגור ב<b>הירוקה בעופרים</b> 🌿';
+    window.__share = {deg, line};
   } else {
-    deg='1.5';
-    const parts=[];
-    COUPLE.avenues.forEach(a=>{ if(opens[a.id]) parts.push(a.weave(opens[a.id])); });
+    deg='1.5'; big='כמעט משפחה! 🌿'; sub='אין חיבור ישיר — אבל מכר אחד בלבד מפריד ביניכם.';
+    const parts=[]; AVN.forEach(a=>{ if(opens[a.id]) parts.push(a.weave(opens[a.id])); });
     if(parts.length){
-      line = 'עולם קטן! אתה מחובר לנועם ויעל דרך חבר אחד בדיוק';
-      verdict = '<b>' + parts.slice(0,2).join(', ו') + '</b> — אז נכון, אין חיבור ישיר, אבל אתם במרחק מכר אחד. זה נחשב! בוא לגור ב<b>הירוקה בעופרים</b> 🌿';
+      line='עולם קטן — מכר אחד ביניכם';
+      verdict='<b>'+parts.slice(0,2).join(', ו')+'</b> — בין שני דתיים תמיד יש חוליה אחת משותפת, וזו שלך. בוא לגור ב<b>הירוקה בעופרים</b> 🌿';
     } else {
-      line = 'עולם קטן — אתם בטוח נתקלתם בקידוש';
-      verdict = 'לא נתת לי הרבה לעבוד איתו, אבל תאמין לי: בין שני דתיים תמיד יש מכר אחד משותף. בוא לגור ב<b>הירוקה בעופרים</b> 🌿';
+      line='עולם קטן — אתם בטוח נתקלתם בקידוש';
+      verdict='לא נתת לי הרבה לעבוד איתו, אבל תאמין לי: בין שני דתיים תמיד יש מכר אחד משותף. בוא לגור ב<b>הירוקה בעופרים</b> 🌿';
     }
+    window.__share = {deg, line};
   }
-
-  const w=document.createElement('div'); w.className='msg bot';
-  w.innerHTML =
-    '<div class="bubble reveal">'
-    + '<div class="rvhead">🎉 מצאנו את החוליה!</div>'
-    + '<div class="deg"><b>'+deg+'</b><span>מעלות הפרדה</span></div>'
-    + '<div class="rvline">'+line+'</div>'
-    + '<div class="rvverdict">'+verdict+'</div>'
-    + '</div>';
-  chatEl.appendChild(w); scrollDown();
-  setTimeout(confetti, 300);
-
-  const s=document.createElement('button'); s.className='btn'; s.textContent='🔗 תשתף את החיבור'; s.onclick=()=>share(deg,line);
-  const r=document.createElement('button'); r.className='btn ghost'; r.textContent='↺ מההתחלה'; r.onclick=()=>location.reload();
-  controls.appendChild(s); controls.appendChild(r);
+  document.getElementById('degNum').textContent=deg;
+  document.getElementById('bigline').textContent=big;
+  document.getElementById('subline').textContent=sub;
+  document.getElementById('revline').textContent=line;
+  document.getElementById('verdict').innerHTML=verdict;
+  show('s-res');
+  setTimeout(confetti, 350);
 }
 
 /* ---------- share ---------- */
-function share(deg,line){
-  const txt='וואלאק, גיליתי שאני במרחק '+deg+' מעלות הפרדה מ'+COUPLE.names+' בהירוקה בעופרים 🌿 '+line.replace(/<[^>]+>/g,'')+' עולם קטן! תבדקו גם אתם:';
+function share(){
+  const s=window.__share||{deg:'1',line:''};
+  const txt='וואלאק, גיליתי שאני במרחק '+s.deg+' מעלות הפרדה מ'+COUPLE.names+' בהירוקה בעופרים 🌿 '+s.line+'. עולם קטן! תבדקו גם אתם:';
   const url=location.href;
   if(navigator.share){ navigator.share({title:'עולם קטן · הירוקה בעופרים',text:txt,url}).catch(()=>{}); }
   else{ window.open('https://wa.me/?text='+encodeURIComponent(txt+' '+url),'_blank'); }
